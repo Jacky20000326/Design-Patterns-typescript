@@ -36,7 +36,7 @@ class ConcreteObserver extends Observer {
         this.subject = subject;
     }
     update() {
-        console.log(this.name);
+        console.log(this.name, this.subject.subjectState);
     }
     get ConcreteSubject() {
         return this._ConcreteSubject;
@@ -46,6 +46,7 @@ class ConcreteObserver extends Observer {
     }
 }
 let concreteSubject = new ConcreteSubject();
+concreteSubject.subjectState = "goodgood";
 concreteSubject.Attach(new ConcreteObserver('a', concreteSubject));
 concreteSubject.Attach(new ConcreteObserver('b', concreteSubject));
 concreteSubject.Attach(new ConcreteObserver('c', concreteSubject));
